@@ -38,34 +38,7 @@ PHP және MySQL қолданып жасалған веб-қосымша. Па
 
 ## Дерекқор құрылымы (ER-диаграмма)
 
-```mermaid
-erDiagram
-    USERS ||--o{ RECIPES : "жазады"
-    CATEGORIES ||--o{ RECIPES : "қамтиды"
-
-    USERS {
-        int id PK
-        varchar username
-        varchar email
-        varchar password
-        datetime created_at
-    }
-    CATEGORIES {
-        int id PK
-        varchar name
-    }
-    RECIPES {
-        int id PK
-        int user_id FK
-        int category_id FK
-        varchar title
-        text description
-        text ingredients
-        text steps
-        int cooking_time
-        datetime created_at
-    }
-```
+![ER-диаграмма](er-diagram.png)
 
 **Байланыстар:**
 - Бір пайдаланушыда көп рецепт болады (`users` 1 : N `recipes`).
